@@ -53,6 +53,7 @@ margin: 60px;
     font-weight: normal;
     font-size: 30px;
     line-height: 36px;
+    margin-bottom: 20px;
 }
 .event-info,.info {
     text-decoration: none;
@@ -91,11 +92,8 @@ margin: 60px;
     line-height: 19px;
 }
 .event-card a:hover{
-    box-shadow: 1px 1px 13px black;
+    text-decoration: underline;
 }
-
-
-
 
 .bottom-btn {
     display: flex;

@@ -3,14 +3,12 @@ const galleryControlsContainer = document.querySelector('.gallery-controls');
 const galleryControls = ['next'];
 const galleryItems = document.querySelectorAll('.gallery-item');
 
-
 class Carousel {
   constructor(container, items, controls) {
     this.carouselContainer = container;
     this.carouselControls = controls;
     this.carouselArray = [...items];
   }
-
   // Update css classes for gallery
   updateGallery() {
     this.carouselArray.forEach(el => {
@@ -37,16 +35,6 @@ class Carousel {
     
     this.updateGallery();
   }
-
-  // Construct the carousel navigation
-  // setNav() {
-    // galleryContainer.appendChild(document.createElement('ul')).className = 'gallery-nav';
-
-    // this.carouselArray.forEach(item => {
-    //   const nav = galleryContainer.lastElementChild;
-    //   nav.appendChild(document.createElement('li'));
-    // }); 
-  // }s
 
   // Construct the carousel controls
   setControls() {
@@ -110,37 +98,46 @@ const b = document.getElementById('nav_bar');
 const c = document.getElementById('ul');
 const d= document.querySelector('.arrow');
 const z= document.querySelector('.brochure');
+const l= document.querySelector('.brochure_class');
+
 const topOfNav = a.offsetTop;
 function change() {
   if (a.clientWidth<450) {
     b.style.backgroundColor = "black";
-    c.getElementsByTagName("a")[0].style.color = 'white';
-    c.getElementsByTagName("a")[1].style.color = 'white';
-    c.getElementsByTagName("a")[2].style.color = 'white';
-    c.getElementsByTagName("a")[3].style.color = 'white';
-    c.getElementsByTagName("a")[4].style.color = 'white';
+    c.getElementsByTagName("span")[0].style.color = 'white';
+    c.getElementsByTagName("span")[1].style.color = 'white';
+    c.getElementsByTagName("span")[2].style.color = 'white';
+    c.getElementsByTagName("span")[3].style.color = 'white';
+    c.getElementsByTagName("span")[4].style.color = 'white';
     d.style.color='white';
+    z.style.display='none'
   }
   else if ((window.scrollY > topOfNav)) {
         b.style.backgroundColor = "black";
-        c.getElementsByTagName("a")[0].style.color = 'white';
-        c.getElementsByTagName("a")[1].style.color = 'white';
-        c.getElementsByTagName("a")[2].style.color = 'white';
-        c.getElementsByTagName("a")[3].style.color = 'white';
-        c.getElementsByTagName("a")[4].style.color = 'white';
+        c.getElementsByTagName("span")[0].style.color = 'white';
+        c.getElementsByTagName("span")[1].style.color = 'white';
+        c.getElementsByTagName("span")[2].style.color = 'white';
+        c.getElementsByTagName("span")[3].style.color = 'white';
+        c.getElementsByTagName("span")[4].style.color = 'white';
         d.style.color='white';
-        z.style.display='none'
+        z.style.display='block';
+        z.style.color='black';
+        l.style.backgroundColor='#f78f20';
+        l.getElementsByTagName("a")[0].style.color = 'black';
+        l.getElementsByTagName("img")[0].style.filter='invert(100%)'
     }
     else{
         b.style.backgroundColor = "#f78f20";
-        c.getElementsByTagName("a")[0].style.color = 'black';
-        c.getElementsByTagName("a")[1].style.color = 'black';
-        c.getElementsByTagName("a")[2].style.color = 'black';
-        c.getElementsByTagName("a")[3].style.color = 'black';
-        c.getElementsByTagName("a")[4].style.color = 'black';
+        c.getElementsByTagName("span")[0].style.color = 'black';
+        c.getElementsByTagName("span")[1].style.color = 'black';
+        c.getElementsByTagName("span")[2].style.color = 'black';
+        c.getElementsByTagName("span")[3].style.color = 'black';
+        c.getElementsByTagName("span")[4].style.color = 'black';
         d.style.color='black';
         z.style.display='block'
-
+        l.style.backgroundColor='black';
+        l.getElementsByTagName("a")[0].style.color = 'white';
+        l.getElementsByTagName("img")[0].style.filter='grayscale(100%)'
     }
 
 }
@@ -158,10 +155,10 @@ arrow_.addEventListener('click',()=>{
 
 
 // Get the container element
-var btnContainer = document.getElementById("nav-li");
+//var btnContainer = document.getElementById("nav-li");
 
 // Get all buttons with class="btn" inside the container
-var btns = btnContainer.getElementsByClassName("nav_btn");
+var btns = document.getElementsByClassName("nav_btn");
 
 // Loop through the buttons and add the active class to the current/clicked button
 for (var i = 0; i < btns.length; i++) {
@@ -170,7 +167,7 @@ for (var i = 0; i < btns.length; i++) {
 
     // If there's no active class
     if (current.length > 0) {
-      current[0].className = current[0].className.replace(" active", "");
+      current[0].className = current[0].className.replace("active", "");
     }
 
     // Add the active class to the current/clicked button
