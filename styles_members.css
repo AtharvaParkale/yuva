@@ -216,6 +216,7 @@ line-height: 36px;
   }
   .heads-info-container {
     width: 40%;
+    color: black;
   }
   .heads-photo-container {
     height: 12vh;
@@ -243,6 +244,7 @@ line-height: 36px;
   }
   .faculty-name{
     font-size: 24px;
+    color: black;
   }
   .head-name{
     font-size: 21px;
